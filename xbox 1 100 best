@@ -1,0 +1,104 @@
+import random
+
+class RandomXboxGamePicker:
+    def __init__(self, games):
+        self.games = games
+        self.unpicked_games = list(games)
+    
+    def pick_game(self):
+        if not self.unpicked_games:
+            raise ValueError("All games have been picked.")
+        picked_game = random.choice(self.unpicked_games)
+        self.unpicked_games.remove(picked_game)
+        return picked_game
+
+# List of 100 best Xbox One games with release year and developer
+xbox_games = [
+    ("The Witcher 3: Wild Hunt", 2015, "CD Projekt Red"),
+    ("Red Dead Redemption 2", 2018, "Rockstar Games"),
+    ("Grand Theft Auto V", 2014, "Rockstar Games"),
+    ("Forza Horizon 4", 2018, "Playground Games"),
+    ("Halo 5: Guardians", 2015, "343 Industries"),
+    ("Gears 5", 2019, "The Coalition"),
+    ("Ori and the Will of the Wisps", 2020, "Moon Studios"),
+    ("Cuphead", 2017, "Studio MDHR"),
+    ("Sea of Thieves", 2018, "Rare"),
+    ("Sunset Overdrive", 2014, "Insomniac Games"),
+    ("Forza Motorsport 7", 2017, "Turn 10 Studios"),
+    ("Control", 2019, "Remedy Entertainment"),
+    ("Sekiro: Shadows Die Twice", 2019, "FromSoftware"),
+    ("Dark Souls III", 2016, "FromSoftware"),
+    ("Assassin's Creed Odyssey", 2018, "Ubisoft Quebec"),
+    ("Assassin's Creed Origins", 2017, "Ubisoft Montreal"),
+    ("The Outer Worlds", 2019, "Obsidian Entertainment"),
+    ("Cyberpunk 2077", 2020, "CD Projekt Red"),
+    ("Resident Evil 2", 2019, "Capcom"),
+    ("Resident Evil 7: Biohazard", 2017, "Capcom"),
+    ("Mortal Kombat 11", 2019, "NetherRealm Studios"),
+    ("Doom Eternal", 2020, "id Software"),
+    ("Call of Duty: Modern Warfare", 2019, "Infinity Ward"),
+    ("Call of Duty: Warzone", 2020, "Infinity Ward, Raven Software"),
+    ("Battlefield 1", 2016, "DICE"),
+    ("Titanfall 2", 2016, "Respawn Entertainment"),
+    ("Apex Legends", 2019, "Respawn Entertainment"),
+    ("Overwatch", 2016, "Blizzard Entertainment"),
+    ("Fortnite", 2017, "Epic Games"),
+    ("PUBG: Battlegrounds", 2017, "PUBG Corporation"),
+    ("Minecraft", 2014, "Mojang"),
+    ("Rocket League", 2015, "Psyonix"),
+    ("Halo: The Master Chief Collection", 2014, "343 Industries"),
+    ("Destiny 2", 2017, "Bungie"),
+    ("Fallout 4", 2015, "Bethesda Game Studios"),
+    ("The Elder Scrolls V: Skyrim", 2016, "Bethesda Game Studios"),
+    ("Far Cry 5", 2018, "Ubisoft Montreal"),
+    ("Far Cry 4", 2014, "Ubisoft Montreal"),
+    ("Far Cry 3", 2018, "Ubisoft Montreal"),
+    ("Gears of War 4", 2016, "The Coalition"),
+    ("Gears of War: Ultimate Edition", 2015, "The Coalition"),
+    ("Halo Wars 2", 2017, "343 Industries, Creative Assembly"),
+    ("Hellblade: Senua's Sacrifice", 2018, "Ninja Theory"),
+    ("Hollow Knight", 2018, "Team Cherry"),
+    ("Hitman 2", 2018, "IO Interactive"),
+    ("Injustice 2", 2017, "NetherRealm Studios"),
+    ("Metal Gear Solid V: The Phantom Pain", 2015, "Kojima Productions"),
+    ("Monster Hunter: World", 2018, "Capcom"),
+    ("NieR: Automata", 2018, "PlatinumGames"),
+    ("Nioh 2", 2020, "Team Ninja"),
+    ("No Man's Sky", 2018, "Hello Games"),
+    ("Ori and the Blind Forest", 2015, "Moon Studios"),
+    ("Outer Wilds", 2019, "Mobius Digital"),
+    ("Prey", 2017, "Arkane Studios"),
+    ("Quantum Break", 2016, "Remedy Entertainment"),
+    ("Rainbow Six Siege", 2015, "Ubisoft Montreal"),
+    ("Resident Evil 3", 2020, "Capcom"),
+    ("Rise of the Tomb Raider", 2015, "Crystal Dynamics"),
+    ("Shadow of the Tomb Raider", 2018, "Eidos-Montréal"),
+    ("Star Wars Jedi: Fallen Order", 2019, "Respawn Entertainment"),
+    ("State of Decay 2", 2018, "Undead Labs"),
+    ("Street Fighter V", 2020, "Capcom"),
+    ("Subnautica", 2018, "Unknown Worlds Entertainment"),
+    ("Terraria", 2014, "Re-Logic"),
+    ("The Division 2", 2019, "Ubisoft Massive"),
+    ("The Evil Within 2", 2017, "Tango Gameworks"),
+    ("The Walking Dead: The Telltale Series", 2012, "Telltale Games"),
+    ("Thumper", 2017, "Drool"),
+    ("Tom Clancy's Ghost Recon Wildlands", 2017, "Ubisoft Paris"),
+    ("Unravel Two", 2018, "Coldwood Interactive"),
+    ("Vampyr", 2018, "Dontnod Entertainment"),
+    ("Warframe", 2014, "Digital Extremes"),
+    ("Watch Dogs 2", 2016, "Ubisoft Montreal"),
+    ("Wasteland 3", 2020, "inXile Entertainment"),
+    ("We Happy Few", 2018, "Compulsion Games"),
+    ("Wolfenstein II: The New Colossus", 2017, "MachineGames"),
+    ("World War Z", 2019, "Saber Interactive"),
+    ("Yakuza 0", 2020, "Sega"),
+    ("Yakuza Kiwami", 2020, "Sega"),
+    ("Yakuza Kiwami 2", 2020, "Sega"),
+    ("Yakuza 6: The Song of Life", 2021, "Sega"),
+    ("Yooka-Laylee", 2017, "Playtonic Games"),
+    ("Zoo Tycoon", 2013, "Frontier Developments"),
+]
+
+# Instantiate and use the RandomXboxGamePicker
+picker = RandomXboxGamePicker(xbox_games)
+print(picker.pick_game())
